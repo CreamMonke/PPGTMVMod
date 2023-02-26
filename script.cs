@@ -6111,8 +6111,7 @@ namespace Mod
                         rocket.loop = ModAPI.LoadSound(path+"loop.wav");
 
                         Transform bomb = GameObject.Instantiate(ModAPI.FindSpawnable("Atom Bomb").Prefab, Instance.transform.position, Quaternion.identity).transform;
-                        bomb.GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("Top");
-                        //GameObject.Destroy(bomb.GetComponent<SpriteRenderer>());
+                        GameObject.Destroy(bomb.GetComponent<SpriteRenderer>());
                         HingeJoint2D bhj = bomb.gameObject.AddComponent<HingeJoint2D>();
                         bhj.connectedBody = Instance.GetComponent<Rigidbody2D>();
                         bhj.limits = zero;
