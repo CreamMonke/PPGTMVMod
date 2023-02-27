@@ -110,7 +110,7 @@ namespace Mod
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             WheelJoint2D wj = Instance.AddComponent<WheelJoint2D>();
                             wj.connectedBody = wheel.GetComponent<Rigidbody2D>();
                             wj.anchor = wps[i];
@@ -255,7 +255,7 @@ namespace Mod
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             WheelJoint2D wj = Instance.AddComponent<WheelJoint2D>();
                             wj.connectedBody = wheel.GetComponent<Rigidbody2D>();
                             wj.anchor = wps[i];
@@ -415,7 +415,7 @@ namespace Mod
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             WheelJoint2D wj = Instance.AddComponent<WheelJoint2D>();
                             wj.connectedBody = wheel.GetComponent<Rigidbody2D>();
                             wj.anchor = wps[i];
@@ -522,7 +522,7 @@ namespace Mod
                             GameObject wheel = GameObject.Instantiate(w, Instance.transform.position + new Vector3(wps[i].x * direction, wps[i].y, 0f), Quaternion.identity);
                             wheel.transform.localScale *= 1.2f;
                             wheel.GetComponent<Rigidbody2D>().mass = 25f;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             WheelJoint2D wj = Instance.AddComponent<WheelJoint2D>();
                             wj.connectedBody = wheel.GetComponent<Rigidbody2D>();
                             wj.anchor = wps[i];
@@ -658,7 +658,7 @@ namespace Mod
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             WheelJoint2D wj = Instance.AddComponent<WheelJoint2D>();
                             wj.connectedBody = wheel.GetComponent<Rigidbody2D>();
                             wj.anchor = wps[i];
@@ -756,13 +756,13 @@ namespace Mod
                         Instance.gameObject.FixColliders();
                         Instance.GetComponent<SpriteRenderer>().sprite = ModAPI.LoadSprite(path + "body.png");
                         Instance.GetComponent<SpriteRenderer>().sortingOrder = 1;
-                        float direction = Instance.transform.localScale.x;
+                        float direction = Instance.transform.localScale.x > 0 ? 1f : -1f;
                         Instance.GetComponent<PhysicalBehaviour>().Properties.Buoyancy = 0.25f;
                         Instance.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                         Instance.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                         rb.mass *= massMult;
 
-                        Instance.transform.localScale *= 2;
+                        Instance.transform.localScale*=2f;
 
                         //FLOATERS
                         GameObject w = ModAPI.FindSpawnable("Plastic Barrel").Prefab;
@@ -975,7 +975,7 @@ namespace Mod
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             WheelJoint2D wj = Instance.AddComponent<WheelJoint2D>();
                             wj.connectedBody = wheel.GetComponent<Rigidbody2D>();
                             wj.anchor = wps[i];
@@ -1212,7 +1212,7 @@ namespace Mod
                             GameObject wheel = GameObject.Instantiate(w, Instance.transform.position + new Vector3(wps[i].x * direction, wps[i].y, 0f), Quaternion.identity);
                             wheel.transform.localScale *= 1.1f;
                             wheel.GetComponent<Rigidbody2D>().mass = 250f;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             WheelJoint2D wj = Instance.AddComponent<WheelJoint2D>();
                             wj.connectedBody = wheel.GetComponent<Rigidbody2D>();
                             wj.anchor = wps[i];
@@ -1348,7 +1348,7 @@ namespace Mod
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             WheelJoint2D wj = Instance.AddComponent<WheelJoint2D>();
                             wj.connectedBody = wheel.GetComponent<Rigidbody2D>();
                             wj.anchor = wps[i];
@@ -1669,7 +1669,7 @@ namespace Mod
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             WheelJoint2D wj = Instance.AddComponent<WheelJoint2D>();
                             wj.connectedBody = wheel.GetComponent<Rigidbody2D>();
                             wj.anchor = wps[i];
@@ -1822,7 +1822,7 @@ namespace Mod
                         {
                             GameObject wheel = GameObject.Instantiate(w, Instance.transform.position + new Vector3(wps[i].x * direction, wps[i].y, 0f), Quaternion.identity);
                             wheel.transform.localScale *= 2f;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
@@ -1958,7 +1958,7 @@ namespace Mod
                         {
                             GameObject wheel = GameObject.Instantiate(w, Instance.transform.position + new Vector3(wps[i].x * direction, wps[i].y, 0f), Quaternion.identity);
                             wheel.transform.localScale *= 1.8f;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
@@ -2094,7 +2094,7 @@ namespace Mod
                         {
                             GameObject wheel = GameObject.Instantiate(w, Instance.transform.position + new Vector3(wps[i].x * direction, wps[i].y, 0f), Quaternion.identity);
                             wheel.transform.localScale *= 2f;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
@@ -2219,7 +2219,7 @@ namespace Mod
                         {
                             GameObject wheel = GameObject.Instantiate(w, Instance.transform.position + new Vector3(wps[i].x * direction, wps[i].y, 0f), Quaternion.identity);
                             wheel.transform.localScale *= 1.5f;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
@@ -2381,7 +2381,7 @@ namespace Mod
                         {
                             GameObject wheel = GameObject.Instantiate(w, Instance.transform.position + new Vector3(wps[i].x * direction, wps[i].y, 0f), Quaternion.identity);
                             wheel.transform.localScale *= 1.5f;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
@@ -2704,7 +2704,7 @@ namespace Mod
                         {
                             GameObject wheel = GameObject.Instantiate(w, Instance.transform.position + new Vector3(wps[i].x * direction, wps[i].y, 0f), Quaternion.identity);
                             wheel.transform.localScale *= 2f;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
@@ -2795,7 +2795,7 @@ namespace Mod
                         {
                             GameObject wheel = GameObject.Instantiate(w, Instance.transform.position + new Vector3(wps[i].x * direction, wps[i].y, 0f), Quaternion.identity);
                             wheel.transform.localScale *= 2f;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
@@ -2905,7 +2905,7 @@ namespace Mod
                         {
                             GameObject wheel = GameObject.Instantiate(w, Instance.transform.position + new Vector3(wps[i].x * direction, wps[i].y, 0f), Quaternion.identity);
                             wheel.transform.localScale *= 2f;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
@@ -3015,7 +3015,7 @@ namespace Mod
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             WheelJoint2D wj = Instance.AddComponent<WheelJoint2D>();
                             wj.connectedBody = wheel.GetComponent<Rigidbody2D>();
                             wj.anchor = wps[i];
@@ -3167,7 +3167,7 @@ namespace Mod
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             WheelJoint2D wj = Instance.AddComponent<WheelJoint2D>();
                             wj.connectedBody = wheel.GetComponent<Rigidbody2D>();
                             wj.anchor = wps[i];
@@ -3321,7 +3321,7 @@ namespace Mod
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             WheelJoint2D wj = Instance.AddComponent<WheelJoint2D>();
                             wj.connectedBody = wheel.GetComponent<Rigidbody2D>();
                             wj.anchor = wps[i];
@@ -3495,7 +3495,7 @@ namespace Mod
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             WheelJoint2D wj = Instance.AddComponent<WheelJoint2D>();
                             wj.connectedBody = wheel.GetComponent<Rigidbody2D>();
                             wj.anchor = wps[i];
@@ -3640,7 +3640,7 @@ namespace Mod
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             WheelJoint2D wj = Instance.AddComponent<WheelJoint2D>();
                             wj.connectedBody = wheel.GetComponent<Rigidbody2D>();
                             wj.anchor = wps[i];
@@ -3907,7 +3907,7 @@ namespace Mod
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             WheelJoint2D wj = Instance.AddComponent<WheelJoint2D>();
                             wj.connectedBody = wheel.GetComponent<Rigidbody2D>();
                             wj.anchor = wps[i];
@@ -4034,7 +4034,7 @@ namespace Mod
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             WheelJoint2D wj = Instance.AddComponent<WheelJoint2D>();
                             wj.connectedBody = wheel.GetComponent<Rigidbody2D>();
                             wj.anchor = wps[i];
@@ -4161,7 +4161,7 @@ namespace Mod
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             WheelJoint2D wj = Instance.AddComponent<WheelJoint2D>();
                             wj.connectedBody = wheel.GetComponent<Rigidbody2D>();
                             wj.anchor = wps[i];
@@ -4527,7 +4527,7 @@ namespace Mod
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             WheelJoint2D wj = Instance.AddComponent<WheelJoint2D>();
                             wj.connectedBody = wheel.GetComponent<Rigidbody2D>();
                             wj.anchor = wps[i];
@@ -4669,7 +4669,7 @@ namespace Mod
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             WheelJoint2D wj = Instance.AddComponent<WheelJoint2D>();
                             wj.connectedBody = wheel.GetComponent<Rigidbody2D>();
                             wj.anchor = wps[i];
@@ -4811,7 +4811,7 @@ namespace Mod
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             WheelJoint2D wj = Instance.AddComponent<WheelJoint2D>();
                             wj.connectedBody = wheel.GetComponent<Rigidbody2D>();
                             wj.anchor = wps[i];
@@ -4938,7 +4938,7 @@ namespace Mod
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             WheelJoint2D wj = Instance.AddComponent<WheelJoint2D>();
                             wj.connectedBody = wheel.GetComponent<Rigidbody2D>();
                             wj.anchor = wps[i];
@@ -5080,7 +5080,7 @@ namespace Mod
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             WheelJoint2D wj = Instance.AddComponent<WheelJoint2D>();
                             wj.connectedBody = wheel.GetComponent<Rigidbody2D>();
                             wj.anchor = wps[i];
@@ -5239,7 +5239,7 @@ namespace Mod
                             wheel.transform.localScale *= 0.8f;
                             if (i == 1) { wheel.transform.localScale *= 0.7f; }
                             wheel.GetComponent<Rigidbody2D>().mass = 25f;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             WheelJoint2D wj = Instance.AddComponent<WheelJoint2D>();
                             wj.connectedBody = wheel.GetComponent<Rigidbody2D>();
                             wj.anchor = wps[i];
@@ -5342,7 +5342,7 @@ namespace Mod
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             WheelJoint2D wj = Instance.AddComponent<WheelJoint2D>();
                             wj.connectedBody = wheel.GetComponent<Rigidbody2D>();
                             wj.anchor = wps[i];
@@ -5700,7 +5700,7 @@ namespace Mod
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             WheelJoint2D wj = Instance.AddComponent<WheelJoint2D>();
                             wj.connectedBody = wheel.GetComponent<Rigidbody2D>();
                             wj.anchor = wps[i];
@@ -5815,7 +5815,7 @@ namespace Mod
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
                             wheel.GetComponent<SpriteRenderer>().sprite = ModAPI.LoadSprite(path+"wheel.png");
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             WheelJoint2D wj = Instance.AddComponent<WheelJoint2D>();
                             wj.connectedBody = wheel.GetComponent<Rigidbody2D>();
                             wj.anchor = wps[i];
@@ -5961,7 +5961,7 @@ namespace Mod
                             wheel.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                             wheel.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                             wheel.GetComponent<Rigidbody2D>().mass *= massMult;
-                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                            wheel.GetComponent<SpriteRenderer>().sortingOrder = 1;
                             WheelJoint2D wj = Instance.AddComponent<WheelJoint2D>();
                             wj.connectedBody = wheel.GetComponent<Rigidbody2D>();
                             wj.anchor = wps[i];
@@ -6058,7 +6058,7 @@ namespace Mod
                         Instance.gameObject.FixColliders();
                         Instance.GetComponent<SpriteRenderer>().sprite = ModAPI.LoadSprite(path + "body.png");
                         Instance.GetComponent<SpriteRenderer>().sortingOrder = 1;
-                        float direction = Instance.transform.localScale.x;
+                        float direction = Instance.transform.localScale.x>0?1f:-1f;
                         Instance.GetComponent<PhysicalBehaviour>().TrueInitialMass *= massMult;
                         Instance.GetComponent<PhysicalBehaviour>().InitialMass *= massMult;
                         rb.mass *= massMult;
@@ -6069,33 +6069,33 @@ namespace Mod
                         zero.min = 0f;
                         zero.max = 0f;
 
-                        Transform flames = GameObject.Instantiate(ModAPI.FindSpawnable("Flamethrower").Prefab, Instance.transform.position + new Vector3(-1f*direction, -38f, 0f), Quaternion.identity).transform;
+                        Transform flames = GameObject.Instantiate(ModAPI.FindSpawnable("Flamethrower").Prefab, Instance.transform.position + new Vector3(-1f, -38f, 0f), Quaternion.identity).transform;
                         flames.GetComponent<FlamethrowerBehaviour>().Range*=5f;
                         flames.GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("Top");
                         GameObject.Destroy(flames.GetComponent<SpriteRenderer>());
-                        flames.localScale = new Vector3(direction, 1f, 1f)*6f;
+                        flames.localScale = new Vector3(1f, 1f, 1f)*6f;
                         foreach (Collider2D c in flames.GetComponents<Collider2D>()) { GameObject.Destroy(c); }
                         flames.localEulerAngles = new Vector3(0f, 0f, -90f);
                         HingeJoint2D hj = flames.gameObject.AddComponent<HingeJoint2D>();
                         hj.connectedBody = Instance.GetComponent<Rigidbody2D>();
                         hj.limits = zero;
 
-                        Transform flamesL = GameObject.Instantiate(ModAPI.FindSpawnable("Flamethrower").Prefab, Instance.transform.position + new Vector3(-3.5f * direction, -40f, 0f), Quaternion.identity).transform;
+                        Transform flamesL = GameObject.Instantiate(ModAPI.FindSpawnable("Flamethrower").Prefab, Instance.transform.position + new Vector3(-3.5f, -40f, 0f), Quaternion.identity).transform;
                         flamesL.GetComponent<FlamethrowerBehaviour>().Range *= 5f;
                         flamesL.GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("Top");
                         GameObject.Destroy(flamesL.GetComponent<SpriteRenderer>());
-                        flamesL.localScale = new Vector3(direction, 1f, 1f) * 6f;
+                        flamesL.localScale = new Vector3(1f, 1f, 1f) * 6f;
                         foreach (Collider2D c in flamesL.GetComponents<Collider2D>()) { GameObject.Destroy(c); }
                         flamesL.localEulerAngles = new Vector3(0f, 0f, -90f);
                         HingeJoint2D hjL = flamesL.gameObject.AddComponent<HingeJoint2D>();
                         hjL.connectedBody = Instance.GetComponent<Rigidbody2D>();
                         hjL.limits = zero;
 
-                        Transform flamesR = GameObject.Instantiate(ModAPI.FindSpawnable("Flamethrower").Prefab, Instance.transform.position + new Vector3(2f * direction, -40f, 0f), Quaternion.identity).transform;
+                        Transform flamesR = GameObject.Instantiate(ModAPI.FindSpawnable("Flamethrower").Prefab, Instance.transform.position + new Vector3(2f, -40f, 0f), Quaternion.identity).transform;
                         flamesR.GetComponent<FlamethrowerBehaviour>().Range *= 5f;
                         flamesR.GetComponent<Renderer>().sortingLayerID = SortingLayer.NameToID("Top");
                         GameObject.Destroy(flamesR.GetComponent<SpriteRenderer>());
-                        flamesR.localScale = new Vector3(direction, 1f, 1f) * 6f;
+                        flamesR.localScale = new Vector3(1f, 1f, 1f) * 6f;
                         foreach (Collider2D c in flamesR.GetComponents<Collider2D>()) { GameObject.Destroy(c); }
                         flamesR.localEulerAngles = new Vector3(0f, 0f, -90f);
                         HingeJoint2D hjR = flamesR.gameObject.AddComponent<HingeJoint2D>();
@@ -6583,7 +6583,7 @@ namespace Mod
         float maxSpeed = 75000f;
         float speed = 5000f;
         float acceleration = 50f;
-        float explodeThreshold = 50f;
+        float explodeThreshold = 30f;
         bool activated = false;
         bool sound = false;
 
@@ -6628,7 +6628,7 @@ namespace Mod
 
         void OnCollisionEnter2D(Collision2D other)
         {
-            if(rb.velocity.magnitude > explodeThreshold && other.gameObject.GetComponent<Rigidbody2D>().mass > 25f)
+            if(rb.velocity.magnitude > explodeThreshold && other.gameObject.GetComponent<Rigidbody2D>().mass > 25f && activated)
             {
                 bomb.ForceSendUse();
                 GameObject.Destroy(gameObject, 0.1f);
